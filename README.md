@@ -80,7 +80,7 @@ Este teste prova o funcionamento do System Prompt ("Sua única missão é auxili
 
 ```mermaid
 graph TD
-    A[Usuário: "Qual a definição de RBAC?"] --> B{Agente GPT-4o: Decisão de Ação};
+    A[Usuario Pergunta AZ-900] --> B{Agente GPT-4o: Decisão de Ação};
     B -- Intenção: Definição --> C(Chamada da Tool: get_service_definition);
     C --> D[Codespace: Executa app.py];
     D -- Retorna JSON com Definição --> B;
