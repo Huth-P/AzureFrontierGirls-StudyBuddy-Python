@@ -10,7 +10,7 @@
             "url": "https://musical-trout-g4ppp9r99vx5cvr55-5000.app.github.dev/"
         }
     ],
-    "paths": {
+   "paths": {
         "/quiz": {
             "get": {
                 "operationId": "get_quiz_question",
@@ -38,6 +38,38 @@
                                         "options": {"type": "string"},
                                         "correct_answer": {"type": "string"},
                                         "explanation": {"type": "string"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/define": {  // <-- NOVO ENDPOINT
+            "get": {
+                "operationId": "get_service_definition",
+                "summary": "Obtém uma definição para um termo-chave do Azure (AZ-900).",
+                "parameters": [
+                    {
+                        "name": "term",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "O termo AZ-900 a ser definido (ex: RBAC, Região)."
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Definição retornada com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "definition": {"type": "string"}
                                     }
                                 }
                             }

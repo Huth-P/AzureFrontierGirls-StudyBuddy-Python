@@ -36,6 +36,33 @@ AZ900_QUESTIONS = {
     ]
 }
 
+# app.py: Adicione esta nova base de dados de definições
+# (Cole logo após a base AZ900_QUESTIONS)
+
+AZ900_DEFINITIONS = {
+    "rbac": "Role-Based Access Control (RBAC) é um sistema que permite gerenciar quem tem acesso aos recursos do Azure e o que eles podem fazer com eles.",
+    "region": "Uma Região do Azure é um conjunto de data centers implantados dentro de um perímetro definido por latência e conectados por uma rede regional dedicada.",
+    "availability set": "Um Availability Set é um agrupamento lógico de VMs que garante que elas rodem em hardware tolerante a falhas e isolado em diferentes racks dentro de um datacenter."
+}
+
+def get_definition(term: str):
+    """Retorna a definição de um termo do AZ-900."""
+    term = term.lower().strip()
+    return AZ900_DEFINITIONS.get(term, "Desculpe, não encontrei a definição exata para este termo AZ-900.")
+
+
+# CÓDIGO para o NOVO ENDPOINT (Cole logo após o endpoint @app.route('/quiz',...))
+
+@app.route('/define', methods=['GET'])
+def define_endpoint():
+    # Pega o parâmetro 'term' da URL que o Agente envia
+    term = request.args.get('term', '')
+    
+    # Chama a função que retorna a definição
+    definition = get_definition(term)
+    
+    # Retorna o JSON com a definição
+    return jsonify({"definition": definition})
 
 def get_quiz_question(topic: str):
     """Retorna uma pergunta do quiz com base no tópico."""
