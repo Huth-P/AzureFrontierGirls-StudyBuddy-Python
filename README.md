@@ -80,7 +80,7 @@ Este teste prova o funcionamento do System Prompt ("Sua única missão é auxili
 
 Para o passo a passo completo do processo (clique a clique), acesse o guia de documentação abaixo:
 
-[**Acesse o GUIA COMPLETO DE IMPLEMENTAÇÃO (20+ Prints)**](GUIA_IMPLEMENTACAO.md)
+[**Acesse o GUIA COMPLETO DE IMPLEMENTAÇÃO (20+ Prints)**](https://github.com/Huth-P/AzureFrontierGirls-StudyBuddy-Python/blob/main/Guia_Implementacao/GUIA_IMPLEMENTACAO.md)
 
 
 
